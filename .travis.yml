@@ -16,4 +16,4 @@ script: make
 before_script:
   - wget archive.ubuntu.com/ubuntu/pool/universe/libu/libuv1/libuv1_1.6.1.orig.tar.gz
   - tar -xvf libuv1_1.6.1.orig.tar.gz
-  - cd libuv-1.6.1 && sh autogen.sh && ./configure --prefix=/usr/local && make && make install
+  - cd libuv-1.6.1 && sh autogen.sh && ./configure --prefix=/tmp/local && make && make install
