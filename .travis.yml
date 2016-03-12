@@ -10,5 +10,10 @@ addons:
       - libsdl1.2-dev
       - libportmidi-dev
       - libsndfile1-dev
-      - libuv1-dev
 script: make
+
+# libuv1 is not available yet in travis
+before_script:
+  - wget archive.ubuntu.com/ubuntu/pool/universe/libu/libuv1/libuv1_1.6.1.orig.tar.gz
+  - tar -xvf libuv1_1.6.1.orig.tar.gz
+  - cd libuv-1.6.1 && sh autogen.sh && ./configure --prefix=/usr/local && make && make install
